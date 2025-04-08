@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Descendant Selector */
+.container header h1 {
+    color: darkblue; /* Directly target <h1> in <header> within .container */
+}
+
+.container header h2 {
+    color: grey; /* Directly target <h2> in <header> within .container */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+/* Child Selector */
+.navbar > ul {
+    list-style-type: none;
+    display: flex; /* Flex layout for horizontal nav */
+}
+
+/* Adjacent Sibling Selector */
+h1 + h2 {
+    margin-top: 10px; /* Style <h2> that comes directly after <h1> */
+}
+
+/* General Sibling Selector */
+h2 ~ p {
+    color: darkgreen; /* Any <p> that follows <h2> */
+}
+
+/* Link Styling */
+.navbar > ul > li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.navbar > ul > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.navbar > ul > li:hover > a {
+    background-color: #555; /* Change background on hover */
+}
+
+/* Nested Unordered List (Descendant Selector) */
+.navbar ul ul {
+    display: none; /* Initially hide submenu */
+    position: absolute; /* Position it below the parent */
+    background-color: #444;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar > ul > li:hover > ul {
+    display: block; /* Show submenu on parent hover */
+}
+
+.navbar ul ul li {
+    margin: 0; /* No margin for nested <li> */
+}
+
+.navbar ul ul li a {
+    color: white;
+    padding: 8px;
+    display: block; /* Make links full width for a better click area */
+}
+
+/* Pseudo Class for hover effect */
+.navbar > ul > li > a:hover {
+    background-color: darkgray;
+}
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Main Title</h1>
+            <h2>Subtitle or Tagline</h2>
+        </header>
+    
+        <div class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a>
+                    <ul>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#history">Our History</a></li>
+                    </ul>
+                </li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    
+        <main>
+            <section>
+                <h2>Welcome to Our Website</h2>
+                <p>This is a simple paragraph in our main content area.</p>
+                <p>Another paragraph for testing sibling selectors.</p>
+            </section>
+        </main>
+    </div>
+
+   
+</body>
+</html> 
